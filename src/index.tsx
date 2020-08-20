@@ -14,14 +14,8 @@ class Test extends React.Component {
 }
 ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route path="/" exact >
-          <App />
-        </Route>
-        <Route path="/test">
-          <Test />
-        </Route>
-      </Switch>
+      <Route path="/" exact component={App} />
+      <Route path="/test" component={Test} />
     </BrowserRouter>,
   document.getElementById('root')
 );
