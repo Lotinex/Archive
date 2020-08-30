@@ -1,26 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-class Test extends React.Component {
-  render(){
-    return (
-      <h1>asdasdasd</h1>
-    )
-  }
-}
-ReactDOM.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Route path="/" exact component={App} />
-      <Route path="/test" component={Test} />
-    </BrowserRouter>,
-  document.getElementById('root')
-);
+import {Transition, PathResolver} from './Tools/Transition'
+import Framework from './Tools/Framework'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+import Main from './Pages/Main'
+
+const path = {
+  'index' : Main
+}
+
+PathResolver(path);
+
 serviceWorker.unregister();
