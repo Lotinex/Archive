@@ -15,6 +15,7 @@ declare namespace Refer {
             renderingText: string;
             visible: boolean;
             position: {x: number, y: number};
+            scrollY: number;
         }
     }
     namespace Global {

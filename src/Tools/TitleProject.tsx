@@ -187,6 +187,7 @@ export class ProjectDescriptor extends Framework<Refer.Props.ProjectDescriptor, 
         renderingText : '',
         visible : false,
         position : {x: 0, y: 0},
+        scrollY : 0,
     }
     Union: Partial<Refer.Global.UNION> = {
         'renderDescription' : (value, position) => {
@@ -202,7 +203,7 @@ export class ProjectDescriptor extends Framework<Refer.Props.ProjectDescriptor, 
         return (
             <>
                 {this.state.visible ?
-                    <div className="project-descriptor" style={{left: `${this.state.position.x + 10}px`, top: `${this.state.position.y + 10}px`}}>
+                    <div className="project-descriptor" style={{left: `${this.state.position.x + 10}px`, top: `${this.state.position.y + 10 - window.scrollY}px`}}>
                         {this.state.renderingText}
                     </div>
                     : null
